@@ -8,7 +8,7 @@ $bu = Yii::app()->baseUrl;
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="language" content="es"/>
 
-    <script src="<?php echo Yii::app()->baseUrl; ?>/js/skrollr.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css"/>
 
@@ -17,24 +17,21 @@ $bu = Yii::app()->baseUrl;
 
 <body>
 
-<div class="navbar navbar-default navbar-fixed-top st-nav"
-     data-0="background-color:rgba(0,0,0,0); padding-top:20px; padding-bottom:20px; font-size:20px"
-     data-200="background-color:rgba(0,0,0,1); padding-top:0px; padding-bottom:0px; font-size:15px">
+<div class="navbar navbar-default navbar-fixed-top st-nav">
     <div class="container">
         <div class="navbar-header">
             <a href="<?php echo $this->createUrl('index'); ?>" class="navbar-brand">
-                <img data-0="width:170px; margin-top:-7px" data-200="width:117px" class="st-logo"
-                     src="<?php echo $bu; ?>/images/st-logo.png"/>
+                <img data-0="width:170px; margin-top:-7px" data-200="width:117px" class="st-logo" src="<?php echo $bu; ?>/images/st-logo.png"/>
             </a>
         </div>
         <div class="navbar-collapse collapse">
             <?php $this->widget('zii.widgets.CMenu', array(
                 'items' => array(
-                    array('label' => 'Historia', 'url' => array('/site/page', 'view' => 'about')),
-                    array('label' => 'Cómo llegar', 'url' => array('/site/page', 'view' => 'about')),
-                    array('label' => 'Contáctanos', 'url' => array('/site/contact')),
+                    array('label' => 'Home', 'url' => array('/site/index')),
+                    array('label' => 'About', 'url' => array('/site/page', 'view' => 'about')),
+                    array('label' => 'Contact', 'url' => array('/site/contact')),
                     array('label' => 'Login', 'url' => array('/site/login'), 'visible' => Yii::app()->user->isGuest),
-                    array('label' => 'Logout (' . Yii::app()->user->name . ')', 'url' => array('/site/logout'), 'visible' => !Yii::app()->user->isGuest)
+                    array('label' => 'Logout (' . Yii::app()->user->name . ')', 'url' => array('/admin/logout'), 'visible' => !Yii::app()->user->isGuest)
                 ),
                 'htmlOptions' => array('class' => 'nav navbar-nav navbar-right')
             )); ?>
@@ -43,11 +40,9 @@ $bu = Yii::app()->baseUrl;
 </div>
 <!-- mainmenu -->
 
-<div class="st-container">
-    <?php if (!isset($this->HOME) || !$this->HOME): ?>
-        <div class="st-page-header"></div>
-    <?php endif; ?>
-    <div <?php echo !isset($this->HOME) ? 'class="container' : ''; ?> >
+<div class="st-admin-container">
+
+    <div class="container" >
         <?php echo $content; ?>
     </div>
 
@@ -60,9 +55,6 @@ $bu = Yii::app()->baseUrl;
 </div>
 <!-- page -->
 
-<script>
-    skrollr.init();
-</script>
 
 </body>
 </html>
