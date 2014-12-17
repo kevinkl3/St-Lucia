@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,700,600,500,200,300,800,100);
+
 .st-admin-container {
     margin-top: 50px;
 }
@@ -13,11 +15,14 @@
 }
 
 .st-section {
+    position: relative;
     padding-top: 100px;
     padding-bottom: 100px;
-    background-color: #74ff79;
 }
-
+.st-section p{
+    font-family: Raleway;
+    font-size: 18px;
+}
 .st-footer {
     text-align: center;
     color: #eee;
@@ -44,6 +49,51 @@
     border: none;
     color: #fff;
     background-color: #000;
+}
+
+.st-landing{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    background-image: url('./../images/img1.jpg');
+    background-size: 100%;
+}
+
+.st-welcome-message{
+    color:#fff;
+    font-size: 3em;
+    font-family: Raleway;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0,0,0,0.9);
+}
+
+
+@media (min-width: 1200px) {
+
+    .st-landing, .st-section {
+        min-height: 800px;
+    }
+}
+
+@media (max-width: 1199px) {
+
+    .st-landing, .st-section {
+        min-height: 600px;
+    }
+}
+
+@media (max-width: 899px) {
+
+    .st-landing, .st-section {
+        min-height: 400px;
+    }
+}
+
+@media (max-width: 599px) {
+
+    .st-landing, .st-section {
+        min-height: 200px;
+    }
 }
 
 /*TEXT*/

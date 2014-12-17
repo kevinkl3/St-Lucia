@@ -20,17 +20,17 @@ $bu = Yii::app()->baseUrl;
 <div class="navbar navbar-default navbar-fixed-top st-nav">
     <div class="container">
         <div class="navbar-header">
-            <a href="<?php echo $this->createUrl('index'); ?>" class="navbar-brand">
+            <a href="<?php echo $this->createUrl('site/index'); ?>" class="navbar-brand">
                 <img data-0="width:170px; margin-top:-7px" data-200="width:117px" class="st-logo" src="<?php echo $bu; ?>/images/st-logo.png"/>
             </a>
         </div>
         <div class="navbar-collapse collapse">
             <?php $this->widget('zii.widgets.CMenu', array(
                 'items' => array(
-                    array('label' => 'Home', 'url' => array('/site/index')),
-                    array('label' => 'About', 'url' => array('/site/page', 'view' => 'about')),
-                    array('label' => 'Contact', 'url' => array('/site/contact')),
-                    array('label' => 'Login', 'url' => array('/site/login'), 'visible' => Yii::app()->user->isGuest),
+                    array('label' => 'ADMIN', 'url' => array('/admin/index')),
+                    array('label' => 'USUARIOS', 'url' => array('/user/index')),
+                    array('label' => 'PUBLICACIONES', 'url' => array('/post/index')),
+                    array('label' => 'SECCIONES', 'url' => array('/section/index')),
                     array('label' => 'Logout (' . Yii::app()->user->name . ')', 'url' => array('/admin/logout'), 'visible' => !Yii::app()->user->isGuest)
                 ),
                 'htmlOptions' => array('class' => 'nav navbar-nav navbar-right')

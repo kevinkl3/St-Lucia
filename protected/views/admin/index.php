@@ -22,7 +22,7 @@ $this->breadcrumbs = array(
                 </p>
 
                 <div class="text-centered">
-                    <a class="btn btn-primary">Ingresar</a>
+                    <a href="<?php echo Yii::app()->createUrl('user');?>" class="btn btn-primary">Ingresar</a>
                 </div>
             </div>
         </div>
@@ -39,7 +39,7 @@ $this->breadcrumbs = array(
                 </p>
 
                 <div class="text-centered">
-                    <a class="btn btn-warning">Ingresar</a>
+                    <a href="<?php echo Yii::app()->createUrl('post');?>" class="btn btn-warning">Ingresar</a>
                 </div>
             </div>
         </div>
@@ -53,7 +53,7 @@ $this->breadcrumbs = array(
                 <p class="st-section-desc">Administración de las secciones de contenido disponibles en el sitio.</p>
 
                 <div class="text-centered">
-                    <a class="btn btn-success">Ingresar</a>
+                    <a href="<?php echo Yii::app()->createUrl('section');?>" class="btn btn-success">Ingresar</a>
                 </div>
             </div>
         </div>

@@ -9,6 +9,7 @@ $bu = Yii::app()->baseUrl;
     <meta name="language" content="es"/>
 
     <script src="<?php echo Yii::app()->baseUrl; ?>/js/skrollr.min.js"></script>
+    <script src="<?php echo Yii::app()->baseUrl; ?>/js/jquery.js"></script>
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css"/>
 
@@ -30,10 +31,10 @@ $bu = Yii::app()->baseUrl;
         <div class="navbar-collapse collapse">
             <?php $this->widget('zii.widgets.CMenu', array(
                 'items' => array(
-                    array('label' => 'Historia', 'url' => array('/site/page', 'view' => 'about')),
-                    array('label' => 'Cómo llegar', 'url' => array('/site/page', 'view' => 'about')),
-                    array('label' => 'Contáctanos', 'url' => array('/site/contact')),
-                    array('label' => 'Login', 'url' => array('/site/login'), 'visible' => Yii::app()->user->isGuest),
+                    array('label' => 'Historia', 'url' => '#historia'),
+                    array('label' => 'Cómo llegar', 'url' => '#como-llegar'),
+                    array('label' => 'Contáctanos', 'url' => '#contactanos'),
+                    array('label' => 'ADMIN', 'url' => array('/admin/index'), 'visible' => !Yii::app()->user->isGuest),
                     array('label' => 'Logout (' . Yii::app()->user->name . ')', 'url' => array('/site/logout'), 'visible' => !Yii::app()->user->isGuest)
                 ),
                 'htmlOptions' => array('class' => 'nav navbar-nav navbar-right')
@@ -60,6 +61,7 @@ $bu = Yii::app()->baseUrl;
 </div>
 <!-- page -->
 
+<script src="<?php echo Yii::app()->baseUrl; ?>/js/home.js"></script>
 <script>
     skrollr.init();
 </script>

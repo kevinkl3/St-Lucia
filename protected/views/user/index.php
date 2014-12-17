@@ -2,19 +2,31 @@
 /* @var $this UserController */
 /* @var $dataProvider CActiveDataProvider */
 
-$this->breadcrumbs=array(
-	'Users',
-);
-
-$this->menu=array(
-	array('label'=>'Create USER', 'url'=>array('create')),
-	array('label'=>'Manage USER', 'url'=>array('admin')),
-);
 ?>
+<div class="page-header">
+    <h3>USUARIOS</h3>
+</div>
 
-<h1>Users</h1>
 
-<?php $this->widget('zii.widgets.CListView', array(
-	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
-)); ?>
+<div>
+    <?php $this->widget('zii.widgets.grid.CGridView', array(
+        'id'=>'user-grid',
+        'dataProvider'=>$model->search(),
+        'filter'=>$model,
+        'columns'=>array(
+            'ID_USER',
+            'NAME',
+            'USERNAME',
+            'PASSWORD',
+            'CREATION_DATE',
+            'LAST_LOGIN',
+            /*
+            'EMAIL',
+            'ACTIVE',
+            */
+            array(
+                'class'=>'CButtonColumn',
+            ),
+        ),
+    )); ?>
+</div>

@@ -57,7 +57,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'ACTIVE'); ?>
-		<?php echo $form->textField($model,'ACTIVE'); ?>
+		<?php echo $form->checkBox($model,'ACTIVE'); ?>
 		<?php echo $form->error($model,'ACTIVE'); ?>
 	</div>
 
