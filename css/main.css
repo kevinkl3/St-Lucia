@@ -7,6 +7,11 @@
 .st-section-desc{
     min-height: 80px;
 }
+
+.st-div{
+ padding-top: 10px;
+    padding-bottom: 10px;
+}
 /*For header*/
 .st-page-header{
     min-height:200px;

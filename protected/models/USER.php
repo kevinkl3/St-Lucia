@@ -63,12 +63,12 @@ class USER extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'ID_USER' => 'ID User',
+			'ID_USER' => 'ID Usuario',
 			'NAME' => 'Nombre',
 			'USERNAME' => 'Nombre de Usuario',
 			'PASSWORD' => 'Contraseña',
-			'CREATION_DATE' => 'Creation Date',
-			'LAST_LOGIN' => 'Last Login',
+			'CREATION_DATE' => 'Fecha de Creacion',
+			'LAST_LOGIN' => 'Fecha de Ultimo Ingreso',
 			'EMAIL' => 'Email',
 			'ACTIVE' => 'Activo',
 		);
@@ -95,7 +95,7 @@ class USER extends CActiveRecord
 		$criteria->compare('ID_USER',$this->ID_USER);
 		$criteria->compare('NAME',$this->NAME,true);
 		$criteria->compare('USERNAME',$this->USERNAME,true);
-		$criteria->compare('PASSWORD',$this->PASSWORD,true);
+		$criteria->compare('PASSWORD',$this->PASSWORD,false);
 		$criteria->compare('CREATION_DATE',$this->CREATION_DATE,true);
 		$criteria->compare('LAST_LOGIN',$this->LAST_LOGIN,true);
 		$criteria->compare('EMAIL',$this->EMAIL,true);
