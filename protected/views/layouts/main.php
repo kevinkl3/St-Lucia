@@ -35,7 +35,7 @@ $bu = Yii::app()->baseUrl;
                     array('label' => 'Cómo llegar', 'url' => '#como-llegar'),
                     array('label' => 'Contáctanos', 'url' => '#contactanos'),
                     array('label' => 'ADMIN', 'url' => array('/admin/index'), 'visible' => !Yii::app()->user->isGuest),
-                    array('label' => 'Logout (' . Yii::app()->user->name . ')', 'url' => array('/site/logout'), 'visible' => !Yii::app()->user->isGuest)
+                    array('label' => 'Logout (' . Yii::app()->user->name . ')', 'url' => array('/admin/logout'), 'visible' => !Yii::app()->user->isGuest)
                 ),
                 'htmlOptions' => array('class' => 'nav navbar-nav navbar-right')
             )); ?>
