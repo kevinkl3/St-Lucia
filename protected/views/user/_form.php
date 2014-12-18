@@ -4,67 +4,71 @@
 /* @var $form CActiveForm */
 ?>
 
-<div class="form">
+<div class="well">
+    <div class="form-horizontal">
 
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'user-form',
-	// Please note: When you enable ajax validation, make sure the corresponding
-	// controller action is handling ajax validation correctly.
-	// There is a call to performAjaxValidation() commented in generated controller code.
-	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>false,
-)); ?>
+    <?php $form=$this->beginWidget('CActiveForm', array(
+        'id'=>'user-form',
+        // Please note: When you enable ajax validation, make sure the corresponding
+        // controller action is handling ajax validation correctly.
+        // There is a call to performAjaxValidation() commented in generated controller code.
+        // See class documentation of CActiveForm for details on this.
+        'enableAjaxValidation'=>false,
+    )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+        <p class="note">Los campos con <span class="required">*</span> son requeridos.</p>
 
-	<?php echo $form->errorSummary($model); ?>
+        <?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'NAME'); ?>
-		<?php echo $form->textField($model,'NAME',array('size'=>45,'maxlength'=>45)); ?>
-		<?php echo $form->error($model,'NAME'); ?>
-	</div>
+        <div class="form-group">
+            <?php echo $form->labelEx($model,'NAME',array('class'=>'col-lg-2 control-label')); ?>
+            <div class="col-lg-10">
+                <?php echo $form->textField($model,'NAME',array('size'=>45,'maxlength'=>45,'class'=>'form-control')); ?>
+            </div>
+            <?php echo $form->error($model,'NAME'); ?>
+        </div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'USERNAME'); ?>
-		<?php echo $form->textField($model,'USERNAME',array('size'=>45,'maxlength'=>45)); ?>
-		<?php echo $form->error($model,'USERNAME'); ?>
-	</div>
+        <div class="form-group">
+            <?php echo $form->labelEx($model,'USERNAME',array('class'=>'col-lg-2 control-label')); ?>
+            <div class="col-lg-10">
+                <?php echo $form->textField($model,'USERNAME',array('size'=>45,'maxlength'=>45,'class'=>'form-control')); ?>
+            </div>
+            <?php echo $form->error($model,'USERNAME'); ?>
+        </div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'PASSWORD'); ?>
-		<?php echo $form->passwordField($model,'PASSWORD',array('size'=>60,'maxlength'=>64)); ?>
-		<?php echo $form->error($model,'PASSWORD'); ?>
-	</div>
+        <div class="form-group">
+            <?php echo $form->labelEx($model,'PASSWORD',array('class'=>'col-lg-2 control-label')); ?>
+            <div class="col-lg-10">
+                <?php echo $form->passwordField($model,'PASSWORD',array('size'=>60,'maxlength'=>64,'class'=>'form-control')); ?>
+            </div>
+            <?php echo $form->error($model,'PASSWORD'); ?>
+        </div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'CREATION_DATE'); ?>
-		<?php echo $form->textField($model,'CREATION_DATE'); ?>
-		<?php echo $form->error($model,'CREATION_DATE'); ?>
-	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'LAST_LOGIN'); ?>
-		<?php echo $form->textField($model,'LAST_LOGIN'); ?>
-		<?php echo $form->error($model,'LAST_LOGIN'); ?>
-	</div>
+        <div class="form-group">
+            <?php echo $form->labelEx($model,'EMAIL',array('class'=>'col-lg-2 control-label')); ?>
+            <div class="col-lg-10">
+                <?php echo $form->textField($model,'EMAIL',array('size'=>45,'maxlength'=>45,'class'=>'form-control')); ?>
+                <div class="checkbox">
+                    <label>
+                        <?php echo $form->checkBox($model,'ACTIVE'); ?> Activo
+                    </label>
+                    <?php echo $form->error($model,'ACTIVE'); ?>
+                </div>
+            </div>
+            <?php echo $form->error($model,'EMAIL'); ?>
+        </div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'EMAIL'); ?>
-		<?php echo $form->textField($model,'EMAIL',array('size'=>45,'maxlength'=>45)); ?>
-		<?php echo $form->error($model,'EMAIL'); ?>
-	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'ACTIVE'); ?>
-		<?php echo $form->checkBox($model,'ACTIVE'); ?>
-		<?php echo $form->error($model,'ACTIVE'); ?>
-	</div>
 
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
-	</div>
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <button type="submit" class="btn btn-primary"><?php echo $model->isNewRecord ? 'Crear' : 'Guardar' ?></button>
+            </div>
+        </div>
 
-<?php $this->endWidget(); ?>
+    <?php $this->endWidget(); ?>
 
-</div><!-- form -->
+    </div><!-- form -->
+
+</div>
