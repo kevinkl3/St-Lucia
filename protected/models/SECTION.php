@@ -58,10 +58,10 @@ class SECTION extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'ID_SECTION' => 'Id Section',
-			'NAME' => 'Name',
-			'DESCRIPTION' => 'Description',
-			'ACTIVE' => 'Active',
+			'ID_SECTION' => 'Id de Sección',
+			'NAME' => 'Nombre',
+			'DESCRIPTION' => 'Descripción',
+			'ACTIVE' => 'Activo',
 		);
 	}
 

@@ -69,6 +69,7 @@ class SectionController extends Controller
 
 		if(isset($_POST['SECTION']))
 		{
+
 			$model->attributes=$_POST['SECTION'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->ID_SECTION));
@@ -122,10 +123,15 @@ class SectionController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('SECTION');
+		$model=new SECTION('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['SECTION']))
+			$model->attributes=$_GET['SECTION'];
+
 		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+			'model'=>$model,
 		));
+
 	}
 
 	/**

@@ -1,20 +1,36 @@
 <?php
 /* @var $this PostController */
 /* @var $dataProvider CActiveDataProvider */
-
-$this->breadcrumbs=array(
-	'Posts',
-);
-
-$this->menu=array(
-	array('label'=>'Create POST', 'url'=>array('create')),
-	array('label'=>'Manage POST', 'url'=>array('admin')),
-);
 ?>
 
-<h1>Posts</h1>
+<div class="page-header">
+    <h3>PUBLICACIONES</h3>
+</div>
 
-<?php $this->widget('zii.widgets.CListView', array(
-	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
-)); ?>
+<div class="col-lg-12 st-div">
+    <a href="<?php echo $this->createUrl('create'); ?>" class="btn btn-success" style="float:right;">Crear nueva
+        publicación</a>
+</div>
+
+<div class="col-lg-12">
+    <div class="well">
+        <?php $this->widget('zii.widgets.grid.CGridView', array(
+            'id' => 'user-grid',
+            'dataProvider' => $model->search(),
+            'filter' => $model,
+            'columns' => array(
+                'ID_POST',
+                'TITLE',
+                'CONTENT',
+                'FILE_ONLY',
+                'USER_ID_USER',
+                'SECTION_ID_SECTION',
+
+                array(
+                    'class' => 'CButtonColumn',
+                ),
+            ),
+        )); ?>
+    </div>
+
+</div>
