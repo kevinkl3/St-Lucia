@@ -16,7 +16,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>View USER #<?php echo $model->ID_USER; ?></h1>
+<h1>Usuario <?php echo $model->NAME; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
@@ -24,10 +24,13 @@ $this->menu=array(
 		'ID_USER',
 		'NAME',
 		'USERNAME',
-		'PASSWORD',
 		'CREATION_DATE',
 		'LAST_LOGIN',
 		'EMAIL',
-		'ACTIVE',
+		array(
+            'name'=>'ACTIVE',
+            'header'=>'Activo',
+            'value'=>(($model->ACTIVE===0)?"No":"Si")
+        )
 	),
 )); ?>
