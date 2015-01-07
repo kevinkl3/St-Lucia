@@ -32,6 +32,7 @@ $bu = Yii::app()->baseUrl;
 
 <div class="st-section" id="como-llegar">
     <h1>CÓMO LLEGAR</h1>
+    <div id="map-canvas"></div>
 </div>
 
 <div class="st-section" id="contactanos">
