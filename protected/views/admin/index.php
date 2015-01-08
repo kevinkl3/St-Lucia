@@ -11,7 +11,7 @@ $this->breadcrumbs = array(
 
 
 <div class="well col-lg-12">
-    <div class="col-lg-4">
+    <div class="col-lg-3">
         <div class="panel panel-primary">
             <div class="panel-heading">
                 <h3 class="panel-title"><i class="fa fa-users"></i>&nbsp;USUARIOS</h3>
@@ -27,7 +27,7 @@ $this->breadcrumbs = array(
             </div>
         </div>
     </div>
-    <div class="col-lg-4">
+    <div class="col-lg-3">
         <div class="panel panel-warning">
             <div class="panel-heading">
                 <h3 class="panel-title"><i class="fa fa-newspaper-o"></i>&nbsp;PUBLICACIONES</h3>
@@ -44,7 +44,7 @@ $this->breadcrumbs = array(
             </div>
         </div>
     </div>
-    <div class="col-lg-4">
+    <div class="col-lg-3">
         <div class="panel panel-success">
             <div class="panel-heading">
                 <h3 class="panel-title"><i class="fa fa-cubes"></i>&nbsp;SECCIONES</h3>
@@ -54,6 +54,20 @@ $this->breadcrumbs = array(
 
                 <div class="text-centered">
                     <a href="<?php echo Yii::app()->createUrl('section');?>" class="btn btn-success">Ingresar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="col-lg-3">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-list"></i>&nbsp;INFORMACIÓN GENERAL</h3>
+            </div>
+            <div class="panel-body">
+                <p class="st-section-desc">Administración de la información general mostrada en la pantalla princiapl del sitio.</p>
+
+                <div class="text-centered">
+                    <a href="<?php echo $this->createUrl('editgeneralinfo');?>" class="btn btn-info">Editar</a>
                 </div>
             </div>
         </div>
