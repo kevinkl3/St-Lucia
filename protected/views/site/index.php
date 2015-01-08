@@ -25,6 +25,8 @@ $bu = Yii::app()->baseUrl;
             </p>
         </div>
     </div>
+    <div class="col-lg-12" style="background-image:url('<?php echo $bu;?>/images/img2.jpg'); height:200px; background-size:100%;">
+    </div>
 </div>
 
 <div class="st-section" id="como-llegar">

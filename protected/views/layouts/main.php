@@ -5,12 +5,12 @@ $bu = Yii::app()->baseUrl;
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<style>
-#map-canvas {
-  width: 100%;
-  height: 400px;
-  margin-left: auto;
-  margin-right: auto;
+    <style>
+        #map-canvas {
+            width: 100%;
+            height: 600px;
+            margin-left: auto;
+            margin-right: auto;
 
 }
 </style>
@@ -92,16 +92,20 @@ $bu = Yii::app()->baseUrl;
 skrollr.init();
 </script>
 <script>
-function initialize() {
-  var mapCanvas = document.getElementById('map-canvas');
-  var mapOptions = {
-    center: new google.maps.LatLng(14.118155, -87.106977),
-    zoom: 15,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  }
-  var map = new google.maps.Map(mapCanvas, mapOptions)
-}
-google.maps.event.addDomListener(window, 'load', initialize);
+    function initialize() {
+        var mapCanvas = document.getElementById('map-canvas');
+        var mapOptions = {
+                scrollwheel: false,
+                navigationControl: false,
+                mapTypeControl: false,
+                scaleControl: false,
+                center: new google.maps.LatLng(14.118155, -87.106977),
+                zoom: 15,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 
 
