@@ -114,4 +114,11 @@ class POST extends CActiveRecord
     {
         return parent::model($className);
     }
+
+    public function beforeSave() {
+        if ($this->isNewRecord)
+            $this->CREATION_DATE = new CDbExpression('NOW()');
+
+        return parent::beforeSave();
+    }
 }

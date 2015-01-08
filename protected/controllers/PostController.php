@@ -70,8 +70,8 @@ class PostController extends Controller
 
         if (isset($_POST['POST'])) {
             $model->attributes = $_POST['POST'];
-//            $model->USER_ID_USER = Yii::app()->user->id
-            $model->USER_ID_USER = 1;
+            $model->USER_ID_USER = Yii::app()->user->id;
+            //$model->USER_ID_USER = 1;
             if ($model->save())
                 $this->redirect(array('view', 'id' => $model->ID_POST));
         }
