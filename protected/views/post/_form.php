@@ -48,7 +48,7 @@ $bu = Yii::app()->baseUrl;
         <div class="form-group">
             <label for="select" class="col-lg-2 control-label">Sección</label>
             <div class="col-lg-10">
-                <?php echo $form->dropDownList($model, 'SECTION',CHtml::listData($sections, 'ID_SECTION', 'NAME'),array('class'=>'form-control')); ?>
+                <?php echo $form->dropDownList($model, 'SECTION_ID_SECTION',CHtml::listData($sections, 'ID_SECTION', 'NAME'),array('class'=>'form-control')); ?>
             </div>
         </div>
 

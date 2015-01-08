@@ -52,16 +52,18 @@ $GENERAL_INFORMATION = GeneralInformation::model()->findByPk(1);
             )); ?>
 
             <?php if(isset($this->sections)): ?>
-                <?php foreach($this->sections as $s): ?>
+               
                     <ul class="nav navbar-nav navbar-right">
                       <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">SECCIONES <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                          <li><a href="<?php echo $this->createUrl('site/posts/'.$s->NAME);?>"><?php echo $s->NAME;?></a></li>
+                           <?php foreach($this->sections as $s): ?>
+                              <li><a href="<?php echo $this->createUrl('site/posts/'.$s->NAME);?>"><?php echo $s->NAME;?></a></li>
+                           <?php endforeach; ?>
                         </ul>
                       </li>
                     </ul>
-                <?php endforeach; ?>
+               
             <?php endif;?>
         </div>
     </div>
