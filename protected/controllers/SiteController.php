@@ -3,6 +3,7 @@
 class SiteController extends Controller{
 
     public $HOME;
+    public $sections;
 	/**
 	 * Declares class-based actions.
 	 */
@@ -31,7 +32,13 @@ class SiteController extends Controller{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
         $this->HOME = true;
+        $this->sections = SECTION::model()->findAll();
 		$this->render('index');
+	}
+
+	public function actionPosts($name){
+		$section = SECTION::model()->find("NAME LIKE :sname",array('sname'=>"%$name%"));
+		$this->render('posts',array('section'=>$section));
 	}
 
 	/**

@@ -9,6 +9,7 @@ $bu = Yii::app()->baseUrl;
     <meta name="language" content="es"/>
 
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="<?php echo Yii::app()->baseUrl; ?>/js/jquery.js"></script>
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css"/>
 

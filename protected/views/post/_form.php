@@ -2,7 +2,10 @@
 /* @var $this PostController */
 /* @var $model POST */
 /* @var $form CActiveForm */
+$bu = Yii::app()->baseUrl;
 ?>
+
+<script src="<?php echo $bu;?>/ckeditor/ckeditor.js"></script>
 
 <div class="well">
     <div class="form-horizontal">
@@ -44,13 +47,8 @@
 
         <div class="form-group">
             <label for="select" class="col-lg-2 control-label">Sección</label>
-
             <div class="col-lg-10">
-                <select class="form-control" id="select" name="POST[SECTION_ID_SECTION]">
-                    <?php foreach ($sections as $s): ?>
-                        <option value="<?php echo $s->ID_SECTION; ?>"><?php echo $s->NAME; ?></option>
-                    <?php endforeach; ?>
-                </select>
+                <?php echo $form->dropDownList($model, 'SECTION',CHtml::listData($sections, 'ID_SECTION', 'NAME'),array('class'=>'form-control')); ?>
             </div>
         </div>
 
@@ -65,3 +63,10 @@
     </div>
 
 </div><!-- form -->
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        CKEDITOR.replace( 'POST_CONTENT' );
+    });
+</script>

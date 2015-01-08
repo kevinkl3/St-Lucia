@@ -49,6 +49,19 @@ $bu = Yii::app()->baseUrl;
                 ),
                 'htmlOptions' => array('class' => 'nav navbar-nav navbar-right')
             )); ?>
+
+            <?php if(isset($this->sections)): ?>
+                <?php foreach($this->sections as $s): ?>
+                    <ul class="nav navbar-nav navbar-right">
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">SECCIONES <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="<?php echo $this->createUrl('site/posts/'.$s->NAME);?>"><?php echo $s->NAME;?></a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                <?php endforeach; ?>
+            <?php endif;?>
         </div>
     </div>
 </div>
@@ -58,7 +71,7 @@ $bu = Yii::app()->baseUrl;
     <?php if (!isset($this->HOME) || !$this->HOME): ?>
         <div class="st-page-header"></div>
     <?php endif; ?>
-    <div <?php echo !isset($this->HOME) ? 'class="container' : ''; ?> >
+    <div <?php echo !isset($this->HOME) ? 'class="container"' : ''; ?> >
         <?php echo $content; ?>
     </div>
 
@@ -92,6 +105,6 @@ $bu = Yii::app()->baseUrl;
     google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 
-
+<script src="<?php echo Yii::app()->baseUrl; ?>/js/bootstrap.min.js"></script>
 </body>
 </html>
