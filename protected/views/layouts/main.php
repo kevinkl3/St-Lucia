@@ -8,7 +8,7 @@ $bu = Yii::app()->baseUrl;
     <style>
         #map-canvas {
             width: 100%;
-            height: 400px;
+            height: 600px;
             margin-left: auto;
             margin-right: auto;
 
@@ -79,9 +79,13 @@ $bu = Yii::app()->baseUrl;
     function initialize() {
         var mapCanvas = document.getElementById('map-canvas');
         var mapOptions = {
-            center: new google.maps.LatLng(14.118155, -87.106977),
-            zoom: 15,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
+                scrollwheel: false,
+                navigationControl: false,
+                mapTypeControl: false,
+                scaleControl: false,
+                center: new google.maps.LatLng(14.118155, -87.106977),
+                zoom: 15,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
         }
         var map = new google.maps.Map(mapCanvas, mapOptions)
     }
