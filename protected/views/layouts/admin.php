@@ -32,6 +32,7 @@ $bu = Yii::app()->baseUrl;
                     array('label' => 'USUARIOS', 'url' => array('/user/index')),
                     array('label' => 'PUBLICACIONES', 'url' => array('/post/index')),
                     array('label' => 'SECCIONES', 'url' => array('/section/index')),
+                    array('label' => 'INFORMACIÓN GENERAL', 'url' => Yii::app()->createUrl('generalinformation/update', array('id' => 1)) ),
                     array('label' => 'Logout (' . Yii::app()->user->name . ')', 'url' => array('/admin/logout'), 'visible' => !Yii::app()->user->isGuest)
                 ),
                 'htmlOptions' => array('class' => 'nav navbar-nav navbar-right')

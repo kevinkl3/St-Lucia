@@ -25,7 +25,7 @@ class AdminController extends Controller
     {
         return array(
             array('allow',  // allow all users to perform 'index' and 'view' actions
-                'actions'=>array('index','logout'),
+                'actions'=>array('index','logout', 'editgeneralinfo'),
                 'users'=>array('@'),
             ),
             array('allow',
@@ -48,7 +48,13 @@ class AdminController extends Controller
 	}
 
 
-    /**
+    public function actionEditGeneralInfo()
+    {
+        $model = GeneralInformation::model()->findByAttributes(array('ID'=>1));
+        $this->redirect( Yii::app()->createUrl('generalinformation/update', array('id' => $model->ID)) );
+    }
+
+        /**
      * Displays the login page
      */
     public function actionLogin()

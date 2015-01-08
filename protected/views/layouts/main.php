@@ -1,8 +1,9 @@
 <?php /* @var $this Controller */
 $bu = Yii::app()->baseUrl;
+$GENERAL_INFORMATION = GeneralInformation::model()->findByPk(1);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <style>
@@ -12,18 +13,18 @@ $bu = Yii::app()->baseUrl;
             margin-left: auto;
             margin-right: auto;
 
-        }
-    </style>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="language" content="es"/>
+}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="es"/>
 
-    <script src="<?php echo Yii::app()->baseUrl; ?>/js/skrollr.min.js"></script>
-    <script src="<?php echo Yii::app()->baseUrl; ?>/js/jquery.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js"></script>
-    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap.css"/>
-    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css"/>
+<script src="<?php echo Yii::app()->baseUrl; ?>/js/skrollr.min.js"></script>
+<script src="<?php echo Yii::app()->baseUrl; ?>/js/jquery.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap.css"/>
+<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css"/>
 
-    <title><?php echo CHtml::encode($this->pageTitle); ?></title>
+<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
 <body>
@@ -64,6 +65,7 @@ $bu = Yii::app()->baseUrl;
             <?php endif;?>
         </div>
     </div>
+  </div>
 </div>
 <!-- mainmenu -->
 
@@ -75,18 +77,34 @@ $bu = Yii::app()->baseUrl;
         <?php echo $content; ?>
     </div>
 
-    <div class="clear"></div>
-    <div class="st-footer">
-        Copyright &copy; <?php echo date('Y'); ?> by A Team<br/>
+  <div class="clear"></div>
+  <div class="st-footer st-section" id="contactanos">
+    <div class="col-lg-12">
+      <div class="col-lg-4">
+        <span class="label label-primary">
+          Teléfonos: <?php echo $GENERAL_INFORMATION->PHONES ?>
+        </span>
+      </div>
+<div class="col-lg-4">
+  <span class="label label-success">
+    Correo: <?php echo $GENERAL_INFORMATION->EMAIL ?>
+  </span>
+</div>
+<div class="col-lg-4">
+  <span class="label label-warning">
+    Fax: <?php echo $GENERAL_INFORMATION->FAX ?>
+  </span>
+</div>
     </div>
-    <!-- footer -->
+  </div>
+  <!-- footer -->
 
 </div>
 <!-- page -->
 
 <script src="<?php echo Yii::app()->baseUrl; ?>/js/home.js"></script>
 <script>
-    skrollr.init();
+skrollr.init();
 </script>
 <script>
     function initialize() {
