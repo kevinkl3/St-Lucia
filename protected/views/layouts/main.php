@@ -5,11 +5,21 @@ $bu = Yii::app()->baseUrl;
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
+    <style>
+        #map-canvas {
+            width: 100%;
+            height: 400px;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+    </style>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="language" content="es"/>
 
     <script src="<?php echo Yii::app()->baseUrl; ?>/js/skrollr.min.js"></script>
     <script src="<?php echo Yii::app()->baseUrl; ?>/js/jquery.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css"/>
 
@@ -65,6 +75,19 @@ $bu = Yii::app()->baseUrl;
 <script>
     skrollr.init();
 </script>
+<script>
+    function initialize() {
+        var mapCanvas = document.getElementById('map-canvas');
+        var mapOptions = {
+            center: new google.maps.LatLng(14.118155, -87.106977),
+            zoom: 15,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
 
 </body>
 </html>

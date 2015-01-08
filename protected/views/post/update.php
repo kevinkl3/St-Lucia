@@ -16,6 +16,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Update POST <?php echo $model->ID_POST; ?></h1>
+<h1>Editar Publicación <?php echo $model->ID_POST; ?></h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php $this->renderPartial('_form', array('model'=>$model, 'sections'=>$sections)); ?>

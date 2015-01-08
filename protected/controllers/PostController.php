@@ -102,6 +102,7 @@ class PostController extends Controller
 
         $this->render('update', array(
             'model' => $model,
+            'sections' => SECTION::model()->findAll()
         ));
     }
 

@@ -26,9 +26,9 @@
                 'USER_ID_USER',
                 'SECTION_ID_SECTION',
 
-                array(
-                    'class' => 'CButtonColumn',
-                ),
+//                array(
+//                    'class' => 'CButtonColumn',
+//                ),
             ),
         )); ?>
     </div>

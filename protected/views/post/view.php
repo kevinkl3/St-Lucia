@@ -16,7 +16,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>View POST #<?php echo $model->ID_POST; ?></h1>
+<h1>Publicación #<?php echo $model->ID_POST; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
