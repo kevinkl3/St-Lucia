@@ -106,22 +106,25 @@ $GENERAL_INFORMATION = GeneralInformation::model()->findByPk(1);
 <script>
 skrollr.init();
 </script>
-<script>
-function initialize() {
-  var mapCanvas = document.getElementById('map-canvas');
-  var mapOptions = {
-    scrollwheel: false,
-    navigationControl: false,
-    mapTypeControl: false,
-    scaleControl: false,
-    center: new google.maps.LatLng(14.118155, -87.106977),
-    zoom: 15,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
+<?php if ($this->HOME): ?>
+  <script>
+  function initialize() {
+    var mapCanvas = document.getElementById('map-canvas');
+    var mapOptions = {
+      scrollwheel: false,
+      navigationControl: false,
+      mapTypeControl: false,
+      scaleControl: false,
+      center: new google.maps.LatLng(14.118155, -87.106977),
+      zoom: 15,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+    var map = new google.maps.Map(mapCanvas, mapOptions)
   }
-  var map = new google.maps.Map(mapCanvas, mapOptions)
+  google.maps.event.addDomListener(window, 'load', initialize);
+  </script>
 }
-google.maps.event.addDomListener(window, 'load', initialize);
-</script>
+<?php endif; ?>
 
 <script src="<?php echo Yii::app()->baseUrl; ?>/js/bootstrap.min.js"></script>
 </body>
