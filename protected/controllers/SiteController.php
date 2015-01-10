@@ -36,6 +36,7 @@ class SiteController extends Controller{
 	}
 
 	public function actionPosts($name){
+    $this->HOME = false;
 		$section = SECTION::model()->find("NAME LIKE :sname",array('sname'=>"%$name%"));
 		$this->render('posts',array('section'=>$section));
 	}

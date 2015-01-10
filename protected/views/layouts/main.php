@@ -46,8 +46,8 @@ $GENERAL_INFORMATION = GeneralInformation::model()->findByPk(1);
     <div class="navbar-collapse collapse">
       <?php $this->widget('zii.widgets.CMenu', array(
         'items' => array(
-          array('label' => 'Historia', 'url' => '#historia'),
-          array('label' => 'Cómo llegar', 'url' => '#como-llegar'),
+          array('label' => 'Historia', 'url' => '#historia', 'visible' => $this->HOME),
+          array('label' => 'Cómo llegar', 'url' => '#como-llegar','visible' => $this->HOME),
           array('label' => 'Contáctanos', 'url' => '#contactanos'),
           array('label' => 'ADMIN', 'url' => array('/admin/index'), 'visible' => !Yii::app()->user->isGuest),
           array('label' => 'Logout (' . Yii::app()->user->name . ')', 'url' => array('/admin/logout'), 'visible' => !Yii::app()->user->isGuest)

@@ -1,6 +1,6 @@
-<?php 
+<?php
 function dashed($name){
-	return str_replace(" ", "-", $name);	
+	return str_replace(" ", "-", $name);
 }
 ?>
 
@@ -27,7 +27,7 @@ function dashed($name){
 			<?php echo $post->CONTENT; ?>
 			<div class="fb-share-button" style="float:right;" data-href="http://santalucia.tk/index.php/site/posts/<?php echo dashed($post->TITLE) . "_". $post->ID_POST;?>" data-layout="button_count"></div>
 		</div>
-		
+
 	</div>
 	<?php endforeach;?>
 </div>
