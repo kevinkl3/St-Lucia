@@ -12,8 +12,9 @@ $GENERAL_INFORMATION = GeneralInformation::model()->findByPk(1);
        <?php echo $GENERAL_INFORMATION->WELCOME_MESSAGE ?>
     </div>
 </div>
-
 <div class="st-section" id="historia">
+  <div class="col-lg-12" style="background-image:url('<?php echo $bu;?>/images/img2.jpg'); height:200px; background-size:100%;">
+  </div>
     <div class="col-lg-12">
         <div class="col-lg-4">
             <img src="<?php echo $bu;?>/images/santa-lucia.png">
@@ -25,8 +26,6 @@ $GENERAL_INFORMATION = GeneralInformation::model()->findByPk(1);
                  <?php echo $GENERAL_INFORMATION->HISTORY ?>
             </p>
         </div>
-    </div>
-    <div class="col-lg-12" style="background-image:url('<?php echo $bu;?>/images/img2.jpg'); height:200px; background-size:100%;">
     </div>
 </div>
 

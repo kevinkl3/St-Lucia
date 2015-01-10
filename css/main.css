@@ -1,126 +1,218 @@
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,700,600,500,200,300,800,100);
 
-
 .post-header{
-    
+
 }
 
 .post-header h2{
-    font-size: 2em;
-    font-weight: bold;
+  font-size: 2em;
+  font-weight: bold;
 }
 
 .post-content{
-    padding: 20px;
-    border-bottom: solid thin #e5e5e5;
+  padding: 20px;
+  border-bottom: solid thin #e5e5e5;
 }
 
-
-
 .st-admin-container {
-    margin-top: 50px;
+  margin-top: 50px;
 }
 
 .st-section-desc{
-    min-height: 80px;
+  min-height: 80px;
 }
 
 .st-div{
- padding-top: 10px;
-    padding-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 /*For header*/
 .st-page-header{
-    min-height:200px;
-    background-image: url('./../images/img1.jpg');
-    background-size: 100%;
+  min-height:200px;
+  background-image: url('./../images/img1.jpg');
+  background-size: 100%;
 }
 
 .st-section {
-    position: relative;
-    padding-top: 50px;
-    padding-bottom: 100px;
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 100px;
 }
+
 .st-section p{
-    font-family: Raleway;
-    font-size: 18px;
-}
-.st-footer {
-    text-align: center;
-    color: #eee;
-    text-shadow: 0px 0px 4px #000;
-    padding-top: 100px;
-    padding-bottom: 100px;
-    background: #1a1a1a;
-    font-family: Raleway;
-    font-size:27px;
+  font-family: Raleway;
+  font-size: 18px;
 }
 
-.st-footer a {
-    color: #fc0;
-}
-
-.st-brand {
-    color: #f80;
+st-brand {
+  color: #f80;
 }
 
 .st-logo {
-    width: 117px;
-    margin-top: -7px;
+  width: 117px;
+  margin-top: -7px;
 }
 
 .st-nav {
-    border: none;
-    color: #fff;
-    background-color: #000;
+  border: none;
+  color: #fff;
+  background-color: #000;
 }
 
 .st-landing{
-    display: flex;
-    justify-content: center;
-    align-items:center;
-    background-image: url('./../images/img1.jpg');
-    background-size: 100%;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  background-image: url('./../images/img1.jpg');
+  background-size: 100%;
 }
 
 .st-welcome-message{
-    color:#fff;
-    font-size: 3em;
-    font-family: Raleway;
-    text-align: center;
-    text-shadow: 0px 4px 4px rgba(0,0,0,0.9);
+  color:#fff;
+  font-size: 3em;
+  font-family: Raleway;
+  text-align: center;
+  text-shadow: 0px 4px 4px rgba(0,0,0,0.9);
 }
 
 
 @media (min-width: 1200px) {
 
-    .st-landing, .st-section {
-        min-height: 800px;
-    }
+  .st-landing, .st-section {
+    min-height: 800px;
+  }
 }
 
 @media (max-width: 1199px) {
 
-    .st-landing, .st-section {
-        min-height: 600px;
-    }
+  .st-landing, .st-section {
+    min-height: 600px;
+  }
 }
 
 @media (max-width: 899px) {
 
-    .st-landing, .st-section {
-        min-height: 400px;
-    }
+  .st-landing, .st-section {
+    min-height: 400px;
+  }
 }
 
 @media (max-width: 599px) {
 
-    .st-landing, .st-section {
-        min-height: 200px;
-    }
+  .st-landing, .st-section {
+    min-height: 200px;
+  }
 }
 
 /*TEXT*/
 .text-centered{
+  text-align: center;
+}
+
+/* FOOTER */
+footer {
+  width: 100%;
+  height:71px;
+  display: inline-block;
+  background-color: #999;
+  font-family: Raleway, sans-serif;
+  font-size:20px;
+}
+
+footer .copyright {
+  width: 50%;
+  float: left;
+  line-height: 70px;
+  color: white;
+  font-size: 0.7em;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  footer .copyright {
+    width: 100%;
+    align-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  footer .copyright p {
     text-align: center;
+    padding: 0;
+  }
+}
+
+footer .social {
+  width: 50%;
+  float: right;
+}
+
+@media (max-width: 600px) {
+  footer .social {
+    width: 100%;
+  }
+}
+
+footer .social a {
+  float: left;
+  line-height: 71px;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  -moz-transition: all, 0.3s;
+  -o-transition: all, 0.3s;
+  -webkit-transition: all, 0.3s;
+  transition: all, 0.3s;
+}
+
+footer .social a:hover {
+  background-color: #222;
+  -moz-transition: all, 0.3s;
+  -o-transition: all, 0.3s;
+  -webkit-transition: all, 0.3s;
+  transition: all, 0.3s;
+}
+
+.insta {
+  background-color: #663200;
+  font-size: 1.2em;
+  width: 15%;
+}
+
+.face {
+  background-color: #3D5B94;
+  font-size: 1.2em;
+  width: 15%;
+}
+
+.tweet {
+  background-color: #3DACDD;
+  font-size: 1.2em;
+  width: 15%;
+}
+
+.support {
+  background-color: #6dcd9a;
+  font-size: 13px;
+  width: 55%;
+  max-height: 71px;
+  line-height: 24px !important;
+}
+
+.st-footer {
+  text-align: center;
+  color: #eee;
+  text-shadow: 0px 0px 4px #000;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background: #1a1a1a;
+  font-family: Raleway;
+  font-size:27px;
+}
+
+.st-footer a {
+  color: #fc0;
 }
