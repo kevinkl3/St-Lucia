@@ -34,9 +34,9 @@ $GENERAL_INFORMATION = GeneralInformation::model()->findByPk(1);
   <div id="map-canvas"></div>
 </div>
 <?php if ($GENERAL_INFORMATION->MISSION):?>
-    <div class="row st-section" style="text-align: center; align-content: center;">
+    <div id ="mision-vision" class="row st-section" style="text-align: center; align-content: center;">
         <div id="mision" class="col-lg-6">
-            <img class="img-circle" src="dataimage/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+            <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
             <h2>MISIÓN</h2>
             <p ><?php echo $GENERAL_INFORMATION->MISSION ?></p>
         </div><!-- /.col-lg-6 -->
