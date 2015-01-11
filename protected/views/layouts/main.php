@@ -48,6 +48,8 @@ $GENERAL_INFORMATION = GeneralInformation::model()->findByPk(1);
         'items' => array(
           array('label' => 'Historia', 'url' => '#historia', 'visible' => $this->HOME),
           array('label' => 'Cómo llegar', 'url' => '#como-llegar','visible' => $this->HOME),
+            array('label' => 'Misión', 'url' => '#mision', 'visible' => $this->HOME),
+            array('label' => 'Visión', 'url' => '#vision', 'visible' => $this->HOME),
           array('label' => 'Contáctanos', 'url' => '#contactanos'),
           array('label' => 'ADMIN', 'url' => array('/admin/index'), 'visible' => !Yii::app()->user->isGuest),
           array('label' => 'Logout (' . Yii::app()->user->name . ')', 'url' => array('/admin/logout'), 'visible' => !Yii::app()->user->isGuest)
@@ -127,4 +129,21 @@ skrollr.init();
 
 <script src="<?php echo Yii::app()->baseUrl; ?>/js/bootstrap.min.js"></script>
 </body>
-</html>
+<div id="fb-root"></div>
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '630471293745366',
+            xfbml      : true,
+            version    : 'v2.2'
+        });
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
