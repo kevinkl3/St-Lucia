@@ -36,13 +36,13 @@ $GENERAL_INFORMATION = GeneralInformation::model()->findByPk(1);
 <?php if ($GENERAL_INFORMATION->MISSION):?>
     <div class="row st-section" style="text-align: center; align-content: center;">
         <div id="mision" class="col-lg-6">
-            <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-            <h2>MISION</h2>
+            <img class="img-circle" src="dataimage/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+            <h2>MISIÓN</h2>
             <p ><?php echo $GENERAL_INFORMATION->MISSION ?></p>
         </div><!-- /.col-lg-6 -->
         <div id="vision" class="col-lg-6">
             <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-            <h2>VISION</h2>
+            <h2>VISIÓN</h2>
             <p ><?php echo $GENERAL_INFORMATION->VISION ?></p>
         </div><!-- /.col-lg-6 -->
 
