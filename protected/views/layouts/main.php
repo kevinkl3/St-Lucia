@@ -123,7 +123,6 @@ skrollr.init();
   }
   google.maps.event.addDomListener(window, 'load', initialize);
   </script>
-}
 <?php endif; ?>
 
 <script src="<?php echo Yii::app()->baseUrl; ?>/js/bootstrap.min.js"></script>
