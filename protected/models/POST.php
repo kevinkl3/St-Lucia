@@ -16,8 +16,10 @@
  * @property SECTION $SECTION
  * @property USER $USER
  */
-class POST extends CActiveRecord
-{
+class POST extends CActiveRecord{
+
+    public $author;
+
     /**
      * @return string the associated database table name
      */
@@ -40,7 +42,7 @@ class POST extends CActiveRecord
             array('CONTENT', 'safe'),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('ID_POST, TITLE, CONTENT, FILE_ONLY, USER_ID_USER, SECTION_ID_SECTION', 'safe', 'on' => 'search'),
+            array('author,ID_POST, TITLE, CONTENT, FILE_ONLY, USER_ID_USER, SECTION_ID_SECTION', 'safe', 'on' => 'search'),
         );
     }
 
@@ -90,8 +92,8 @@ class POST extends CActiveRecord
     {
         // @todo Please modify the following code to remove attributes that should not be searched.
 
-        $criteria = new CDbCriteria;
 
+        $criteria = new CDbCriteria;
         $criteria->compare('ID_POST', $this->ID_POST);
         $criteria->compare('TITLE', $this->TITLE, true);
         $criteria->compare('CONTENT', $this->CONTENT, true);

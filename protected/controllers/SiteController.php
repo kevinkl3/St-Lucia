@@ -22,6 +22,18 @@ class SiteController extends Controller{
 		);
 	}
 
+	public function getSection($name){
+		$i = 0;
+		$p = 0;
+		$o = 0;
+		while( ($p = strrpos($name,"-",$o)) != FALSE){
+			$i = $p;
+			$o++;
+		}
+		$id = substr($name,$i+1);
+		return SECTION::model()->findByPk($id);
+	}
+
 	/**
 	 * This is the default 'index' action that is invoked
 	 * when an action is not explicitly requested by users.
@@ -30,14 +42,14 @@ class SiteController extends Controller{
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-    $this->HOME = true;
-    $this->sections = SECTION::model()->findAll();
+	    $this->HOME = true;
+	    $this->sections = SECTION::model()->findAll();
 		$this->render('index');
 	}
 
 	public function actionPosts($name){
-    $this->HOME = false;
-		$section = SECTION::model()->find("NAME LIKE :sname",array('sname'=>"%$name%"));
+   		$this->HOME = false;
+		$section = $this->getSection($name);//SECTION::model()->find("NAME LIKE :sname",array('sname'=>"%$name%"));
 		$this->render('posts',array('section'=>$section));
 	}
 

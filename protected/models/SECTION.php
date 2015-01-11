@@ -65,6 +65,11 @@ class SECTION extends CActiveRecord
 		);
 	}
 
+	public function getUrlName(){
+		$urlname = str_replace(" ", "-", $this->NAME);
+		return $urlname . "-" . $this->ID_SECTION;
+	}
+
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 *

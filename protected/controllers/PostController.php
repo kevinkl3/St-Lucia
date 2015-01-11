@@ -37,7 +37,7 @@ class PostController extends Controller
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
                 'actions' => array('admin', 'delete'),
-                'users' => array('admin'),
+                'users' => array('@'),
             ),
             array('deny',  // deny all users
                 'users' => array('*'),
@@ -137,6 +137,9 @@ class PostController extends Controller
 
         $this->render('index', array(
             'model' => $model,
+            'users' => USER::model()->findAll(),
+            'sections'=> SECTION::model()->findAll(),
+            'yesno'=>array(array('OPTION'=>1,'NAME'=>'SI'),array('OPTION'=>0,'NAME'=>'NO'))
         ));
     }
 
