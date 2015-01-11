@@ -11,6 +11,8 @@
  * @property string $PHONES
  * @property string $FAX
  * @property string $EMAIL
+ * @property string $MISSION
+ * @property string $VISION
  */
 class GeneralInformation extends CActiveRecord
 {
@@ -30,12 +32,13 @@ class GeneralInformation extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('ID, HISTORY, WELCOME_MESSAGE, LOCATION, PHONES', 'required'),
+			array('HISTORY, WELCOME_MESSAGE, LOCATION, PHONES', 'required'),
 			array('ID', 'numerical', 'integerOnly'=>true),
 			array('PHONES, FAX, EMAIL', 'length', 'max'=>45),
+			array('MISSION, VISION', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('ID, HISTORY, WELCOME_MESSAGE, LOCATION, PHONES, FAX, EMAIL', 'safe', 'on'=>'search'),
+			array('ID, HISTORY, WELCOME_MESSAGE, LOCATION, PHONES, FAX, EMAIL, MISSION, VISION', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -58,11 +61,13 @@ class GeneralInformation extends CActiveRecord
 		return array(
 			'ID' => 'ID',
 			'HISTORY' => 'Historia',
-			'WELCOME_MESSAGE' => 'Mensaje de Bienvenida',
-			'LOCATION' => 'Cómo llegar',
-			'PHONES' => 'Teléfonos',
+			'WELCOME_MESSAGE' => 'Mensaje de bienvenida',
+			'LOCATION' => 'Como llegar',
+			'PHONES' => 'Telefono',
 			'FAX' => 'Fax',
-			'EMAIL' => 'Correo electrónico',
+			'EMAIL' => 'Email',
+			'MISSION' => 'Misión',
+			'VISION' => 'Visión',
 		);
 	}
 
@@ -91,6 +96,8 @@ class GeneralInformation extends CActiveRecord
 		$criteria->compare('PHONES',$this->PHONES,true);
 		$criteria->compare('FAX',$this->FAX,true);
 		$criteria->compare('EMAIL',$this->EMAIL,true);
+		$criteria->compare('MISSION',$this->MISSION,true);
+		$criteria->compare('VISION',$this->VISION,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

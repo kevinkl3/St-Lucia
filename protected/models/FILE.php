@@ -9,6 +9,7 @@
  * @property string $CREATION_DATE
  * @property integer $FILETYPE_ID_FILETYPE
  * @property integer $POST_ID_POST
+ * @property string $FILE
  *
  * The followings are the available model relations:
  * @property FILETYPE $fILETYPEIDFILETYPE
@@ -34,12 +35,13 @@ class FILE extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('NAME, CREATION_DATE, FILETYPE_ID_FILETYPE, POST_ID_POST', 'required'),
+			array('NAME, CREATION_DATE, FILETYPE_ID_FILETYPE, POST_ID_POST, FILE', 'required'),
 			array('FILETYPE_ID_FILETYPE, POST_ID_POST', 'numerical', 'integerOnly'=>true),
 			array('NAME', 'length', 'max'=>45),
+			array('FILE', 'length', 'max'=>200),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('ID_FILE, NAME, CREATION_DATE, FILETYPE_ID_FILETYPE, POST_ID_POST', 'safe', 'on'=>'search'),
+			array('ID_FILE, NAME, CREATION_DATE, FILETYPE_ID_FILETYPE, POST_ID_POST, FILE', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -67,6 +69,7 @@ class FILE extends CActiveRecord
 			'CREATION_DATE' => 'Creation Date',
 			'FILETYPE_ID_FILETYPE' => 'Filetype Id Filetype',
 			'POST_ID_POST' => 'Post Id Post',
+			'FILE' => 'File',
 		);
 	}
 
@@ -93,6 +96,7 @@ class FILE extends CActiveRecord
 		$criteria->compare('CREATION_DATE',$this->CREATION_DATE,true);
 		$criteria->compare('FILETYPE_ID_FILETYPE',$this->FILETYPE_ID_FILETYPE);
 		$criteria->compare('POST_ID_POST',$this->POST_ID_POST);
+		$criteria->compare('FILE',$this->FILE,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

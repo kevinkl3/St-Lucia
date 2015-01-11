@@ -34,7 +34,7 @@ $GENERAL_INFORMATION = GeneralInformation::model()->findByPk(1);
 <body>
 
   <div class="navbar navbar-default navbar-fixed-top st-nav"
-  data-0="background-color:rgba(0,0,0,0); padding-top:20px; padding-bottom:20px; font-size:20px"
+  data-0="background-color:rgba(0,0,0,0); padding-top:20px; padding-bottom:20px; font-size:17px"
   data-200="background-color:rgba(0,0,0,1); padding-top:0px; padding-bottom:0px; font-size:15px">
   <div class="container">
     <div class="navbar-header">
@@ -48,6 +48,7 @@ $GENERAL_INFORMATION = GeneralInformation::model()->findByPk(1);
         'items' => array(
           array('label' => 'Historia', 'url' => '#historia', 'visible' => $this->HOME),
           array('label' => 'Cómo llegar', 'url' => '#como-llegar','visible' => $this->HOME),
+          array('label' => 'Misión y visión', 'url' => '#mision-vision', 'visible' => $this->HOME),
           array('label' => 'Contáctanos', 'url' => '#contactanos'),
           array('label' => 'ADMIN', 'url' => array('/admin/index'), 'visible' => !Yii::app()->user->isGuest),
           array('label' => 'Logout (' . Yii::app()->user->name . ')', 'url' => array('/admin/logout'), 'visible' => !Yii::app()->user->isGuest)
@@ -107,24 +108,41 @@ $GENERAL_INFORMATION = GeneralInformation::model()->findByPk(1);
 skrollr.init();
 </script>
 <?php if ($this->HOME): ?>
-  <script>
-  function initialize() {
-    var mapCanvas = document.getElementById('map-canvas');
-    var mapOptions = {
-      scrollwheel: false,
-      navigationControl: false,
-      mapTypeControl: false,
-      scaleControl: false,
-      center: new google.maps.LatLng(14.118155, -87.106977),
-      zoom: 15,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    }
-    var map = new google.maps.Map(mapCanvas, mapOptions)
+<script>
+function initialize() {
+  var mapCanvas = document.getElementById('map-canvas');
+  var mapOptions = {
+    scrollwheel: false,
+    navigationControl: false,
+    mapTypeControl: false,
+    scaleControl: false,
+    center: new google.maps.LatLng(14.118155, -87.106977),
+    zoom: 15,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
   }
-  google.maps.event.addDomListener(window, 'load', initialize);
-  </script>
+  var map = new google.maps.Map(mapCanvas, mapOptions)
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
 <?php endif; ?>
 
 <script src="<?php echo Yii::app()->baseUrl; ?>/js/bootstrap.min.js"></script>
 </body>
-</html>
+<div id="fb-root"></div>
+<script>
+window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '630471293745366',
+    xfbml      : true,
+    version    : 'v2.2'
+  });
+};
+
+(function(d, s, id){
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
