@@ -62,7 +62,7 @@ $GENERAL_INFORMATION = GeneralInformation::model()->findByPk(1);
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">SECCIONES <b class="caret"></b></a>
             <ul class="dropdown-menu">
               <?php foreach($this->sections as $s): ?>
-                <li><a href="<?php echo $this->createUrl('site/posts',array('name'=>$s->getUrlName()));?>"><?php echo $s->NAME;?></a></li>
+                <li><a href="<?php echo $this->createUrl('site/posts',array('seccion'=>$s->getUrlName()));?>"><?php echo $s->NAME;?></a></li>
               <?php endforeach; ?>
             </ul>
           </li>

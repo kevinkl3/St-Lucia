@@ -47,9 +47,9 @@ class SiteController extends Controller{
 		$this->render('index');
 	}
 
-	public function actionPosts($name){
+	public function actionPosts($seccion){
    		$this->HOME = false;
-		$section = $this->getSection($name);//SECTION::model()->find("NAME LIKE :sname",array('sname'=>"%$name%"));
+		$section = $this->getSection($seccion);//SECTION::model()->find("NAME LIKE :sname",array('sname'=>"%$name%"));
 		$this->render('posts',array('section'=>$section));
 	}
 
