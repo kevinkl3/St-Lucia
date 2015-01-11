@@ -75,6 +75,11 @@ st-brand {
   text-shadow: 0px 4px 4px rgba(0,0,0,0.9);
 }
 
+.st-history{
+  float: right;
+  padding-top: 20px;
+}
+
 
 @media (min-width: 1200px) {
 

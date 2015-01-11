@@ -2,7 +2,10 @@
 /* @var $this GeneralInformationController */
 /* @var $model GeneralInformation */
 /* @var $form CActiveForm */
+$bu = Yii::app()->baseUrl;
 ?>
+
+<script src="<?php echo $bu;?>/ckeditor/ckeditor.js"></script>
 
 <div class="well">
 	<div class="form-horizontal">
@@ -79,3 +82,9 @@
 	</div>
 
 </div><!-- form -->
+<script type="text/javascript">
+
+$(document).ready(function(){
+	CKEDITOR.replace( 'GeneralInformation_HISTORY' );
+});
+</script>
