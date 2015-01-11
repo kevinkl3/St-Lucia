@@ -44,7 +44,7 @@ class FILETYPE extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'fILEs' => array(self::HAS_MANY, 'FILE', 'FILETYPE_ID_FILETYPE'),
+			'FILES' => array(self::HAS_MANY, 'FILE', 'FILETYPE_ID_FILETYPE'),
 		);
 	}
 

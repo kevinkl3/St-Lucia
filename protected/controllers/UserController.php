@@ -139,6 +139,7 @@ class UserController extends Controller
 
         $this->render('index',array(
             'model'=>$model,
+            'yesno'=>array(array('OPTION'=>1,'NAME'=>'SI'),array('OPTION'=>0,'NAME'=>'NO'))
         ));
 	}
 

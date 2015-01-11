@@ -69,16 +69,38 @@ class PostController extends Controller
         // $this->performAjaxValidation($model);
 
         if (isset($_POST['POST'])) {
+            
             $model->attributes = $_POST['POST'];
             $model->USER_ID_USER = Yii::app()->user->id;
             //$model->USER_ID_USER = 1;
-            if ($model->save())
+            if ($model->save()){
+                if(isset($_POST['FILES'])){
+                    foreach ($_POST['FILES'] as $f) {
+                        $fmodel = new FILE();
+                        $fmodel->attributes = $f;
+                        $fmodel->file = CUploadedFile::getInstance($fmodel,'file');
+                        $fmodel->CREATION_DATE = new CDbExpression('NOW()');
+                        $fmodel->NAME = 'test';
+                        $fmodel->POST_ID_POST = $model->ID_POST;
+                        if($fmodel->save() && isset($fmodel->file))
+                            $fmodel->file->saveAs('uploads/' . $fmodel->file);
+                        else{
+                            print_r($fmodel);
+                            echo "<br><br>FILE:";
+                            print_r($fmodel->file);
+                            return;
+                        }
+                    }
+                }
                 $this->redirect(array('view', 'id' => $model->ID_POST));
+            }
         }
 
         $this->render('create', array(
             'model' => $model,
-            'sections' => SECTION::model()->findAll()
+            'sections' => SECTION::model()->findAll(),
+            'fileModel'=> new FILE(),
+            'types'=>FILETYPE::model()->findAll(),            
         ));
     }
 
@@ -102,7 +124,9 @@ class PostController extends Controller
 
         $this->render('update', array(
             'model' => $model,
-            'sections' => SECTION::model()->findAll()
+            'sections' => SECTION::model()->findAll(),
+            'fileModel'=> new FILE(),
+            'types'=>FILETYPE::model()->findAll(),            
         ));
     }
 
@@ -139,7 +163,7 @@ class PostController extends Controller
             'model' => $model,
             'users' => USER::model()->findAll(),
             'sections'=> SECTION::model()->findAll(),
-            'yesno'=>array(array('OPTION'=>1,'NAME'=>'SI'),array('OPTION'=>0,'NAME'=>'NO'))
+            'yesno'=>array(array('OPTION'=>1,'NAME'=>'SI'),array('OPTION'=>0,'NAME'=>'NO')),
         ));
     }
 

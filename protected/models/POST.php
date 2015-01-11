@@ -66,12 +66,13 @@ class POST extends CActiveRecord{
     public function attributeLabels()
     {
         return array(
-            'ID_POST' => 'Id Publicacion',
-            'TITLE' => 'Titulo',
+            'ID_POST' => 'Id Publicación',
+            'TITLE' => 'Título',
             'CONTENT' => 'Contenido',
             'FILE_ONLY' => 'Publicar unicamente el archivo',
             'USER_ID_USER' => 'Usuario',
-            'SECTION_ID_SECTION' => 'Seccion',
+            'SECTION_ID_SECTION' => 'Sección',
+            'FILES' => 'Archivos',
 
         );
     }

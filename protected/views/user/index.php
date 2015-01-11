@@ -25,7 +25,13 @@
                 'CREATION_DATE',
                 'LAST_LOGIN',
                 'EMAIL',
-                'ACTIVE',
+                 array(
+                    'header'=>'Activo',
+                    'type'=>'raw',
+                    'name'=>'ACTIVE',
+                    'value'=>'$data->ACTIVE ? "SI" : "NO" ',
+                    'filter'=>CHtml::activeDropDownList($model,'ACTIVE',CHtml::listData($yesno, 'OPTION', 'NAME'),array('empty'=>'Todos'))
+                ),
 
                 array(
                     'class' => 'CButtonColumn',

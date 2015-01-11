@@ -15,4 +15,4 @@ $this->menu=array(
 
 <h1>Crear Publicación</h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model,'sections'=>$sections)); ?>
+<?php $this->renderPartial('_form', array('model'=>$model,'sections'=>$sections, 'types'=>$types, 'fileModel'=>$fileModel)); ?>

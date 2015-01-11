@@ -16,6 +16,8 @@
  */
 class FILE extends CActiveRecord
 {
+	
+	public $file;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -96,6 +98,13 @@ class FILE extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+
+	public function beforeSave() {
+        if ($this->isNewRecord)
+            $this->CREATION_DATE = new CDbExpression('NOW()');
+
+        return parent::beforeSave();
+    }
 
 	/**
 	 * Returns the static model of the specified AR class.
