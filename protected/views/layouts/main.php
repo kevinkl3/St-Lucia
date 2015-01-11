@@ -48,7 +48,7 @@ $GENERAL_INFORMATION = GeneralInformation::model()->findByPk(1);
         'items' => array(
           array('label' => 'Historia', 'url' => '#historia', 'visible' => $this->HOME),
           array('label' => 'Cómo llegar', 'url' => '#como-llegar','visible' => $this->HOME),
-          array('label' => 'Misión y visión', 'url' => '#mision', 'visible' => $this->HOME),
+          array('label' => 'Misión y visión', 'url' => '#mision-vision', 'visible' => $this->HOME),
           array('label' => 'Contáctanos', 'url' => '#contactanos'),
           array('label' => 'ADMIN', 'url' => array('/admin/index'), 'visible' => !Yii::app()->user->isGuest),
           array('label' => 'Logout (' . Yii::app()->user->name . ')', 'url' => array('/admin/logout'), 'visible' => !Yii::app()->user->isGuest)
