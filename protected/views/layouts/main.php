@@ -64,10 +64,10 @@
       </li>
       <?php if (!Yii::app()->user->isGuest): ?>
       <li>
-        <a href="<?php echo $this->createUrl('/admin/index');?>">Administrador</a>
+        <a href="<?php echo $this->createUrl('/admin/index');?>">ADMINISTRADOR</a>
       </li>
       <li>
-        <a href="<?php echo $this->createUrl('/admin/logout');?>">Cerrar sesión</a>
+        <a href="<?php echo $this->createUrl('/admin/logout');?>">CERRAR SESIÓN</a>
       </li>
     <?php endif;?>
     <?php if(isset($this->sections) && count($this->sections)>0): ?>
