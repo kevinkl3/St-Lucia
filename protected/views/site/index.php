@@ -21,7 +21,6 @@ $GENERAL_INFORMATION = GeneralInformation::model()->findByPk(1);
     <div class="row">
       <div class="col-lg-12 text-center font-bold">
         <h1 class="font-white" >HISTORIA</h1>
-        <hr class="small">
       </div>
     </div>
     <!-- /.row -->
@@ -41,7 +40,6 @@ $GENERAL_INFORMATION = GeneralInformation::model()->findByPk(1);
     <div class="row">
       <div class="col-lg-12 text-center">
         <h1 class="font-bold font-white">CÓMO LLEGAR</h1>
-        <hr class="small">
         <p class="lead font-white"><?php echo $GENERAL_INFORMATION->LOCATION ?></p>
       </div>
     </div>
@@ -57,7 +55,6 @@ $GENERAL_INFORMATION = GeneralInformation::model()->findByPk(1);
     <div class="row text-center">
       <div class="col-lg-10 col-lg-offset-1">
         <h1 class="font-bold">MISIÓN Y VISIÓN</h1>
-        <hr class="small">
         <div class="row">
           <div class="col-md-6 col-sm-12">
             <div class="service-item">

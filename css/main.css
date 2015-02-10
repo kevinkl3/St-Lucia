@@ -154,8 +154,12 @@ footer .copyright {
   text-align: center;
 }
 
-.font-capitalize{
-  text-transform: capitalize;
+.font-uc{
+  text-transform: uppercase;;
+}
+
+.sub-section{
+  font-size: 11px;
 }
 
 @media (max-width: 600px) {
@@ -286,6 +290,7 @@ footer .social a:hover {
 .accordion-menu li:hover ul li {
     display: block;
     background: #5B5B5B;
+    padding: -10px;
 }
 
 
@@ -295,12 +300,12 @@ footer .social a:hover {
 }
 
 .st-logo {
-    width: 200px;
-    margin-top: -7px;
+    width: 250px;
+    padding-top: -7px;
     position:fixed;
     bottom:5px;
-    right:0:;
-    margin-left: 15px;
+    right:6px;
+    padding-left: 15px;
     background-color:#212121;
 }
 
