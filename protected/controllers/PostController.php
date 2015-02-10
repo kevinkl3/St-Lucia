@@ -69,26 +69,27 @@ class PostController extends Controller
         // $this->performAjaxValidation($model);
 
         if (isset($_POST['POST'])) {
+
             
             $model->attributes = $_POST['POST'];
             $model->USER_ID_USER = Yii::app()->user->id;
-            //$model->USER_ID_USER = 1;
+
             if ($model->save()){
-                if(isset($_POST['FILES'])){
-                    foreach ($_POST['FILES'] as $f) {
-                        $fmodel = new FILE();
-                        $fmodel->attributes = $f;
-                        $fmodel->file = CUploadedFile::getInstance($fmodel,'file');
-                        $fmodel->CREATION_DATE = new CDbExpression('NOW()');
-                        $fmodel->NAME = 'test';
+
+                $files = CUploadedFile::getInstancesByName('files');
+
+                if (isset($files) && count($files) > 0) {
+                    foreach ($files as $f) {
+
+                        $fmodel = new FILE;
+                        $fmodel->FILE = $f->name . "";
+                        $fmodel->NAME = $f->name;
                         $fmodel->POST_ID_POST = $model->ID_POST;
-                        if($fmodel->save() && isset($fmodel->file))
-                            $fmodel->file->saveAs('uploads/' . $fmodel->file);
-                        else{
-                            print_r($fmodel);
-                            echo "<br><br>FILE:";
-                            print_r($fmodel->file);
-                            return;
+                        $fmodel->FILETYPE_ID_FILETYPE = Util::getFileType($f);
+                        //$fmodel->CREATION_DATE = new CDbExpression('NOW()');
+                        if($fmodel->save(false)){
+                            $destinationDirectory = Util::preparePath( '/uploads/'.$model->ID_POST );
+                            $f->saveAs($destinationDirectory .'/' . $fmodel->FILE);
                         }
                     }
                 }

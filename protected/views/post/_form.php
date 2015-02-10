@@ -62,11 +62,15 @@ $bu = Yii::app()->baseUrl;
             <div class="files">
                 <div>
                     <?php echo $form->labelEx($fileModel, 'ARCHIVOS', array('class' => 'col-lg-2 control-label')); ?>
-                    <div class="col-lg-8">
-                        <?php echo $form->fileField($fileModel,'FILES',array('class' => 'form-control', 'name'=>'FILES[0][file]')) ?>
-                    </div>
-                    <div class="col-lg-2">
-                        <?php echo $form->dropDownList($fileModel, 'FILETYPE_ID_FILETYPE',CHtml::listData($types, 'ID_FILETYPE', 'NAME'),array('class'=>'form-control','name'=>'FILES[0][FILETYPE_ID_FILETYPE]')); ?>
+                    <div class="col-lg-10">
+                        <?php
+                          $this->widget('CMultiFileUpload', array(
+                             'name'=>'files',
+                             'accept'=>'jpg|gif|jpeg|png|pdf',
+                             'duplicate' => 'Archivo duplicado!',
+                             'denied' => 'Tipo de archivo invalido!'
+                          ));
+                        ?>
                     </div>
                 </div>
                 <div class="col-lg-10 col-lg-offset-2">
