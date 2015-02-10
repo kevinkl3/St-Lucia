@@ -3,7 +3,7 @@ $bu = Yii::app()->baseUrl;
 $GENERAL_INFORMATION = GeneralInformation::model()->findByPk(1);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -35,41 +35,49 @@ $GENERAL_INFORMATION = GeneralInformation::model()->findByPk(1);
             array('label' => 'SECCIONES', 'url' => array('/section/index')),
             array('label' => 'INFORMACIÓN GENERAL', 'url' => Yii::app()->createUrl('generalinformation/update', array('id' => 1)) ),
             array('label' => 'Logout (' . Yii::app()->user->name . ')', 'url' => array('/admin/logout'), 'visible' => !Yii::app()->user->isGuest)
-          ),
+            ),
           'htmlOptions' => array('class' => 'nav navbar-nav navbar-right')
-        )); ?>
+          )); ?>
+        </div>
       </div>
     </div>
-  </div>
-  <!-- mainmenu -->
+    <!-- mainmenu -->
 
-  <div class="st-admin-container">
+    <div class="st-admin-container">
 
-    <div class="container" >
-      <?php echo $content; ?>
-    </div>
-
-    <div class="clear"></div>
-    <footer id="contactanos">
-      <div class="copyright">
-        &copy 2015 - Municipalidad Santa Lucia
+      <div class="container" >
+        <?php echo $content; ?>
       </div>
-      <div class="social">
-        <a class="support">
-          <i class="fa fa-phone" style="font-size:15px"></i> &nbsp;<?php echo $GENERAL_INFORMATION->PHONES ?><br>
-          <i class="fa fa-envelope-o" style="font-size:15px"></i> &nbsp;<?php echo $GENERAL_INFORMATION->EMAIL ?><br>
-          <i class="fa fa-fax" style="font-size:15px"></i> &nbsp;<?php echo $GENERAL_INFORMATION->FAX; ?>
-        </a>
-        <a href="#" class="face">f</a>
-        <a href="#" class="tweet">t</a>
-        <a href="#" class="insta">inst</a>
-      </div>
-    </footer>
-    <!-- footer -->
+      <hr class="small">
+      <footer id="contactanos">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 text-center">
+              <h4><strong>Municipalidad de Santa Lucía</strong>
+              </h4>
+              <ul class="list-unstyled">
+                <li><i class="fa fa-phone fa-fw"></i> &nbsp;<?php echo $GENERAL_INFORMATION->PHONES ?></li>
+                <li><i class="fa fa-envelope-o fa-fw"></i><a href="mailto:&nbsp;<?php echo $GENERAL_INFORMATION->EMAIL ?>">&nbsp;<?php echo $GENERAL_INFORMATION->EMAIL ?></a></li>
+                <li><i class="fa fa-fax" style="font-size:15px"></i> &nbsp;<?php echo $GENERAL_INFORMATION->FAX; ?></i></li>
+              </ul>
+              <br>
+              <ul class="list-inline">
+                <li>
+                  <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-instagram fa-fw fa-3x"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+                </li>
+              </ul>
+              <p class="text-muted">Copyright &copy 2015 - Municipalidad Santa Lucia</p>
+            </div>
+          </div>
+        </div>
+      </footer>
 
-  </div>
-  <!-- page -->
 
-
-</body>
-</html>
+    </body>
+    </html>

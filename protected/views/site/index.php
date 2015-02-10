@@ -7,44 +7,88 @@ $GENERAL_INFORMATION = GeneralInformation::model()->findByPk(1);
 ?>
 
 <!-- Header Image -->
-<div class="st-landing">
-  <div class="st-welcome-message">
-    <?php echo $GENERAL_INFORMATION->WELCOME_MESSAGE ?>
-  </div>
-</div>
-<div class="st-section" id="historia">
-  <div class="col-lg-12" style="background-image:url('<?php echo $bu;?>/images/img2.jpg'); height:80px; background-size:100%;">
-    <h1 style="float:right">HISTORIA</h1>
-  </div>
-  <div class="col-lg-12">
-    <div class="col-lg-4">
-      <img src="<?php echo $bu;?>/images/santa-lucia.png">
-    </div>
-    <div class="col-lg-8 st-history">
-      <p align="justify">
-        <?php echo $GENERAL_INFORMATION->HISTORY ?>
-      </p>
+<header id="top" class="header">
+  <div class="st-landing">
+    <div class="text-vertical-center st-welcome-message">
+      <?php echo $GENERAL_INFORMATION->WELCOME_MESSAGE ?>
     </div>
   </div>
-</div>
+</header>
 
-<div class="st-section" id="como-llegar">
-  <h1>CÓMO LLEGAR</h1>
-  <p> <?php echo $GENERAL_INFORMATION->LOCATION ?></p>
-  <div id="map-canvas"></div>
-</div>
-<?php if ($GENERAL_INFORMATION->MISSION):?>
-    <div id ="mision-vision" class="row st-section" style="text-align: center; align-content: center;">
-        <div id="mision" class="col-lg-6">
-            <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-            <h2>MISIÓN</h2>
-            <p ><?php echo $GENERAL_INFORMATION->MISSION ?></p>
-        </div><!-- /.col-lg-6 -->
-        <div id="vision" class="col-lg-6">
-            <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-            <h2>VISIÓN</h2>
-            <p ><?php echo $GENERAL_INFORMATION->VISION ?></p>
-        </div><!-- /.col-lg-6 -->
+<!-- About -->
+<section id="historia" class="about st-history">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center font-bold">
+        <h1 class="font-white" >HISTORIA</h1>
+        <hr class="small">
+      </div>
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container -->
+</section>
 
-    </div><!-- /.row -->
-<?php endif; ?>
+<!-- Callout -->
+<aside class="callout st-history-main" >
+  <div style="text-align:justify; font-size:17px" class="text-vertical-center">
+    <?php echo $GENERAL_INFORMATION->HISTORY ?>
+  </div>
+</aside>
+
+<section id="como-llegar" class="st-map">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 class="font-bold font-white">CÓMO LLEGAR</h1>
+        <hr class="small">
+        <p class="lead font-white"><?php echo $GENERAL_INFORMATION->LOCATION ?></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="map">
+    <div id="map-canvas"></div>
+</section>
+
+<section id="mision-vision" class="services bg-primary">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-lg-10 col-lg-offset-1">
+        <h1 class="font-bold">MISIÓN Y VISIÓN</h1>
+        <hr class="small">
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <div class="service-item">
+              <span class="fa-stack fa-4x">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-eye fa-stack-1x text-primary"></i>
+              </span>
+              <h4>
+                <strong>MISIÓN</strong>
+              </h4>
+              <p ><?php echo $GENERAL_INFORMATION->MISSION ?></p>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <div class="service-item">
+              <span class="fa-stack fa-4x">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-shield fa-stack-1x text-primary"></i>
+              </span>
+              <h4>
+                <strong>VISIÓN</strong>
+              </h4>
+              <p><?php echo $GENERAL_INFORMATION->VISION ?></p>
+            </div>
+          </div>
+        </div>
+        <!-- /.row (nested) -->
+      </div>
+      <!-- /.col-lg-10 -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container -->
+</section>

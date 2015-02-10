@@ -29,7 +29,7 @@
 /*For header*/
 .st-page-header{
   min-height:200px;
-  background-image: url('./../images/img1.jpg');
+  background-image: url('./../images/img4.jpeg');
   background-size: 100%;
 }
 
@@ -63,7 +63,7 @@ st-brand {
   display: flex;
   justify-content: center;
   align-items:center;
-  background-image: url('./../images/img1.jpg');
+  background-image: url('./../images/img3.jpeg');
   background-size: 100%;
 }
 
@@ -76,8 +76,28 @@ st-brand {
 }
 
 .st-history{
-  float: right;
-  padding-top: 20px;
+  background-color:#2C3E50; 
+}
+
+.st-history-main{
+  padding: 35px;
+}
+
+.st-map{
+ background-color:#00C59E; 
+}
+
+.st-header {
+  height: 200px;
+  background-image: url('./../images/img3.jpeg');
+}
+
+.font-white{
+  color: white;
+}
+
+.font-bold{
+  font-weight: bold;
 }
 
 
@@ -119,7 +139,6 @@ footer {
   width: 100%;
   height:71px;
   display: inline-block;
-  background-color: #999;
   font-family: Raleway, sans-serif;
   font-size:20px;
 }
@@ -133,6 +152,10 @@ footer .copyright {
   text-transform: capitalize;
   letter-spacing: 1px;
   text-align: center;
+}
+
+.font-capitalize{
+  text-transform: capitalize;
 }
 
 @media (max-width: 600px) {
