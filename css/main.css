@@ -245,6 +245,10 @@ footer .social a:hover {
   color: #fc0;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+}
 
 /*MENU STYLING*/
 
@@ -254,15 +258,12 @@ footer .social a:hover {
     float: right;
     width: 100%;
     margin: 10px auto;
-    padding: 0;
 }
 
 .accordion-menu li {
     float: left;
     width: 100%;
     list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
 .accordion-menu li a {
@@ -270,45 +271,36 @@ footer .social a:hover {
     width: 100%;
     padding: 5%;
     text-decoration: none;
-    margin: 0;
 }
 
 .accordion-menu li:hover ul li a {
     background: #333;
-    margin: 0;
-    padding: 0;
 }
 
 .accordion-menu li ul li {
     display: none;
     float: left;
     width: 100%;
-    margin: 0;
-    padding: 0;
 }
 
 .accordion-menu li:hover ul li {
     display: block;
     background: #5B5B5B;
-    margin: 0;
-    padding: 0;
 }
 
 
 .accordion-menu li ul li:hover a {
     background: none;
     transition: background-color 0.5s ease;
-    margin: 0;
-    padding: 0;
 }
 
 .st-logo {
     width: 200px;
     margin-top: -7px;
     position:fixed;
-    bottom:10px;
+    bottom:5px;
+    right:0:;
     margin-left: 15px;
     background-color:#212121;
-    padding: 0;
 }
 

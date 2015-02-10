@@ -91,28 +91,6 @@ $GENERAL_INFORMATION = GeneralInformation::model()->findByPk(1);
                      src="<?php echo Yii::app()->baseUrl; ?>/images/st-logo.png"/>
             </a>
         </li>
-        <li>
-          <a href="#mision-vision">MISIÓN Y VISIÓN</a>
-        </li>
-      <?php endif;?>
-      <li>
-        <a href="#contactanos">CONTÁCTANOS</a>
-      </li>
-      <?php if (!Yii::app()->user->isGuest): ?>
-      <li>
-        <a href="<?php echo $this->createUrl('/admin/index');?>">ADMINISTRADOR</a>
-      </li>
-      <li>
-        <a href="<?php echo $this->createUrl('/admin/logout');?>">CERRAR SESIÓN</a>
-      </li>
-    <?php endif;?>
-    <?php if(isset($this->sections) && count($this->sections)>0): ?>
-    <li class="dropdown">
-      <a href="#" class="" data-toggle="collapse">SECCIONES<b class="caret"></b></a>
-      <ul class="collapsable-menu" role="menu">
-        <?php foreach($this->sections as $s): ?>
-        <li><a href="<?php echo $this->createUrl('site/posts',array('seccion'=>$s->getUrlName()));?>"><?php echo $s->NAME;?></a></li>
-      <?php endforeach; ?>
     </ul>
 </nav>
 
@@ -159,7 +137,7 @@ $GENERAL_INFORMATION = GeneralInformation::model()->findByPk(1);
             </div>
         </div>
     </div>
-  </div>
+    </div>
 </footer>
 
 <script src="<?php echo Yii::app()->baseUrl; ?>/js/home.js"></script>
