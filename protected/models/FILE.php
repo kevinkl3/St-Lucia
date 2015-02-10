@@ -15,10 +15,8 @@
  * @property FILETYPE $fILETYPEIDFILETYPE
  * @property POST $pOSTIDPOST
  */
-class FILE extends CActiveRecord
-{
+class FILE extends CActiveRecord{
 	
-	public $file;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -38,7 +36,7 @@ class FILE extends CActiveRecord
 			array('NAME, CREATION_DATE, FILETYPE_ID_FILETYPE, POST_ID_POST, FILE', 'required'),
 			array('FILETYPE_ID_FILETYPE, POST_ID_POST', 'numerical', 'integerOnly'=>true),
 			array('NAME', 'length', 'max'=>45),
-			array('FILE', 'length', 'max'=>200),
+			array('FILE', 'file', 'types'=>'jpg, jpeg, gif, png, pdf'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('ID_FILE, NAME, CREATION_DATE, FILETYPE_ID_FILETYPE, POST_ID_POST, FILE', 'safe', 'on'=>'search'),
@@ -53,8 +51,8 @@ class FILE extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'fILETYPEIDFILETYPE' => array(self::BELONGS_TO, 'FILETYPE', 'FILETYPE_ID_FILETYPE'),
-			'pOSTIDPOST' => array(self::BELONGS_TO, 'POST', 'POST_ID_POST'),
+			'TYPE' => array(self::BELONGS_TO, 'FILETYPE', 'FILETYPE_ID_FILETYPE'),
+			'POST' => array(self::BELONGS_TO, 'POST', 'POST_ID_POST'),
 		);
 	}
 
